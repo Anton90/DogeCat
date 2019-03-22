@@ -17,3 +17,9 @@ function out()
 	document.getElementById('doge').innerHTML = 'Woof!';
 }
 
+function click() 
+{
+	
+}
+
+
