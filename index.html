@@ -10,9 +10,26 @@
 	<button type="button" onclick="click()" id="doge">Doggo</button>
 
 <script>
-	document.getElementById("doge").innerHTML = "Woof!";
+	var doggo = document.getElementById("doge");
+
+	doggo.innerHTML = "Woof!";
+
+	doggo.addEventListener("mouseover",imageToButton);
+
+	function imageToButton () 
+	{
+		var dogIcon = document.createElement("img");
+		dogIcon.src = "dogicon.png";
+		doggo.appendChild(dogIcon);
+	}
+
+
+
 
 	
+
+
+
 
 
 </script>
