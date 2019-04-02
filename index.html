@@ -7,31 +7,37 @@
 </head>
 <body>
 
-	<button type="button" onclick="click()" id="doge">Doggo</button>
+	<button type="button" id="doge">Doggo</button>
 
 <script>
 	var doggo = document.getElementById("doge");
 
 	doggo.innerHTML = "Woof!";
 
-	doggo.addEventListener("mouseover",imageToButton);
-
-	function imageToButton () 
-	{
+	doggo.addEventListener("mouseenter",imageToButton);
+	doggo.addEventListener("click", imageToBody)
+	
+	function imageToButton() {
 		var dogIcon = document.createElement("img");
 		dogIcon.src = "dogicon.png";
-		doggo.appendChild(dogIcon);
+		dogIcon.id = "idDogIcon";	
+		if (!document.getElementById("idDogIcon")) {
+			doggo.appendChild(dogIcon)
+		}
 	}
 
-
-
-
+	function imageToBody() {
+		var dogImage = document.createElement("img");
+		dogImage.src = "sunglasses.png";
+		dogImage.id = "idDogImage";
+		if (document.getElementById("idDogImage") ) {
+			document.body.removeChild(document.getElementById("idDogImage"));
+		} else {
+			document.body.appendChild(dogImage);
+		}
+	}
 	
-
-
-
-
-
+	
 </script>
 </body>
 </html>
